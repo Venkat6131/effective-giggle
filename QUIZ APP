@@ -1,0 +1,30 @@
+def ask_question(question, correct_answer):
+    user_answer = input(question + " ")
+    if user_answer.lower() == correct_answer.lower():
+        print("Correct!")
+        return True
+    else:
+        print("Incorrect. The correct answer is:", correct_answer)
+        return False
+
+def main():
+    questions = [
+        ("What is the capital of France?", "Paris"),
+        ("What is the largest mammal?", "Blue Whale"),
+        ("How many continents are there?", "7")
+    ]
+
+    num_correct = 0
+    total_questions = len(questions)
+
+    print("Welcome to the Quiz!")
+
+    for question, answer in questions:
+        if ask_question(question, answer):
+            num_correct += 1
+
+    print("Quiz completed!")
+    print("You got", num_correct, "out of", total_questions, "questions correct.")
+
+if __name__ == "__main__":
+    main()
